@@ -110,15 +110,17 @@ spec:
 
         1. The build is shown in the **Builds** tab and is named **eap74-2**.
 
-            - this build will appear once a first intermediate build **eap74-build-artifacts-1** is complete.
+            - this build will appear once the first intermediate build **eap74-build-artifacts-1** is complete.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
+          The two builds **eap74-build-artifacts-1** and **eap74-2** may take a few minutes to complete.
+
           Verify the builds are complete:
 
-          - The **eap74-build-artifacts-1* build may take a few minutes. When it's finished, a **Complete** badge will surface on the page header beside build name **eap74-build-artifacts-1**. Did this badge appear?
+          - a **Complete** badge will surface on the page header beside build name **eap74-build-artifacts-1**. Did this badge appear?
 
-          - The **eap74-2** build may take a few minutes. When it's finished, a **Complete** badge will surface on the page header beside build name **eap74-2**. Did this badge appear?
+          - a **Complete** badge will surface on the page header beside build name **eap74-2**. Did this badge appear?
 
       summary:
         failed: Try the steps again.
