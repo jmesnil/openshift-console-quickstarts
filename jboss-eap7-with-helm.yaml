@@ -26,7 +26,7 @@ spec:
 
     * **More productive developers with DevOps and Agile Development**
 
-    In this quickstart, you will deploy a [Jakarta EE application](https://github.com/kabir/eap-openshift-quickstarts-wip/tree/main/helloworld) to run it with JBoss EAP 7 on OpenShift.
+    In this quickstart, you will deploy a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) to run it with JBoss EAP 7 on OpenShift.
 
   tasks:
     - description: >-
@@ -45,6 +45,15 @@ spec:
         1. Click **Install Helm Chart**
         
             - Some form sections are collapsed by default. No changes to these sections are needed to proceed. Click the accordion above a collapsed section to expand and view its content.
+
+            - The Jakarta EE application that you will build and deploy is specified with the `build.uri` field:
+
+              ```
+               build:
+                 uri: https://github.com/jboss-eap-up-and-running/eap7-getting-started
+              ```
+
+              If you were building another application, you would change this field to point to your application's Git repository instead.
         
         1. At the bottom of the form, click **Install** to create the JBoss EAP 7 application using the Helm Chart.
       review:
@@ -77,25 +86,39 @@ spec:
         success: Your Helm release for JBoss EAP 7 is deployed.
       title: View the Helm release
     - description: >-
+        An EAP 7 application is built in 2 steps:
+
+        1. The first Build will package the Jakarta EE application and creates an EAP server to run it
+
+        2. The second Build will move the package and the server in a *runtime image* that contains only what is required to run EAP applications.
+
+            - a build will go in various stages that are shown in a badge next to the build name (**Pending, Running, Complete**)
+
         To view the build status of the JBoss EAP 7 application:
         
         1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
-            - a JBoss EAP 7 application use a 2-step builds, the final build that contains the application is named **eap74**.
+        1. Click on the **eap74-build-artifacts** Build Config 
+
+        1. The build is shown in the **Builds** tab and is named **eap74-build-artifacts-1**.
+
+            - this build may take a few minutes to complete.
+
+        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
         1. Click on the **eap74** Build Config 
 
         1. The build is shown in the **Builds** tab and is named **eap74-2**.
 
-            - this build will appear once a first intermediate build **eap74-build-artifacts-1** is complete which may take a few minutes.
-
-            - a build will go in various stages that are shown in a badge next to the build name (**Pending, Running, Complete**)
+            - this build will appear once a first intermediate build **eap74-build-artifacts-1** is complete.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
-          Verify the build is complete:
+          Verify the builds are complete:
 
-          - This build may take a few minutes. When it's finished, a **Complete** badge will surface on the page header beside build name **eap74-2**. Did this badge appear?
+          - The **eap74-build-artifacts-1* build may take a few minutes. When it's finished, a **Complete** badge will surface on the page header beside build name **eap74-build-artifacts-1**. Did this badge appear?
+
+          - The **eap74-2** build may take a few minutes. When it's finished, a **Complete** badge will surface on the page header beside build name **eap74-2**. Did this badge appear?
 
       summary:
         failed: Try the steps again.
@@ -135,7 +158,7 @@ spec:
         instructions: >-
           Verify your JBoss EAP 7 application is running:
 
-          - Does the new tab displays **Hello World!**?
+          - Does the new tab displays **JBoss EAP 7 on Red Hat OpenShift**?
       summary:
         failed: Try the steps again.
         success: Your JBoss EAP 7 application is running.
