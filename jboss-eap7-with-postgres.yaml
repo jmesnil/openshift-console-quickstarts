@@ -46,10 +46,12 @@ spec:
             1. Select `Deployment`
 
         1. Click on **Deployment** link near the bottom of the page
-            1.Add three **Environment variables**:
-              * Name: `POSTGRESQL_USER`, Value: `my-db-user`
-              * Name: `POSTGRESQL_PASSWORD`, Value: `my-db-password`
-              * Name: `POSTGRESQL_DATABASE`, Value: `sampledb`
+
+            1. Add three **Environment variables**:
+
+                * Name: `POSTGRESQL_USER`, Value: `my-db-user`
+                * Name: `POSTGRESQL_PASSWORD`, Value: `my-db-password`
+                * Name: `POSTGRESQL_DATABASE`, Value: `sampledb`
 
          1. Click on **Create**
       review:
