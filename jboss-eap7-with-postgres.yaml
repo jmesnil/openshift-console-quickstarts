@@ -218,7 +218,7 @@ spec:
   conclusion: >-
     Your JBoss EAP 7 application is deployed and ready.
     It uses the PostgreSQL database to store its database.
-    
+
     The connection to the DB was configured by including the the EAP datasource feature pack and its `postgresql-datasource`
     layer when the application image is built.
 
