@@ -83,7 +83,7 @@ spec:
         
             We will use the YAML editor to configure our application to connect to the database.
 
-            1. Change the release name to **my-eap7-app** (instead of the default **eap74**).
+            1. Change the release name to **eap74-with-postgres** (instead of the default **eap74**).
 
             1. Select **YAML view**.
           
@@ -124,9 +124,9 @@ spec:
         instructions: |-
           The Helm Release is represented by the light grey shape with a darker grey dashed border.  The deployment is a white circle containing the JBoss EAP logo.  Verify the application was successfully created:
           
-          - Do you see a **my-eap7-app** Helm Release?
+          - Do you see a **eap74-with-postgres** Helm Release?
           
-          - Do you see a **my-eap7-app** deployment?
+          - Do you see a **eap74-with-postgres** deployment?
 
       summary:
         failed: Try the steps again.
@@ -145,29 +145,29 @@ spec:
         
         1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
-        1. Click on the **my-eap7-app-build-artifacts** Build Config 
+        1. Click on the **eap74-with-postgres-build-artifacts** Build Config.
 
-        1. The build is shown in the **Builds** tab and is named **my-eap7-app-build-artifacts-1**.
+        1. The build is shown in the **Builds** tab and is named **eap74-with-postgres-build-artifacts-1**.
 
             - this build may take a few minutes to complete.
 
         1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
-        1. Click on the **my-eap7-app** Build Config 
+        1. Click on the **eap74-with-postgres** Build Config.
 
-        1. The build is shown in the **Builds** tab and is named **my-eap7-app-2**.
+        1. The build is shown in the **Builds** tab and is named **eap74-with-postgres-2**.
 
-            - this build will appear once the first intermediate build **my-eap7-app-build-artifacts-1** is complete.
+            - this build will appear once the first intermediate build **eap74-with-postgres-build-artifacts-1** is complete.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
-          The two builds **my-eap7-app4-build-artifacts-1** and **my-eap7-app-2** may take a few minutes to complete.
+          The two builds **eap74-with-postgres4-build-artifacts-1** and **eap74-with-postgres-2** may take a few minutes to complete.
           
           Verify the builds are complete:
 
-          - a **Complete** badge will surface on the page header beside build name **my-eap7-app-build-artifacts-1**. Did this badge appear?
+          - a **Complete** badge will surface on the page header beside build name **eap74-with-postgres-build-artifacts-1**. Did this badge appear?
 
-          - a **Complete** badge will surface on the page header beside build name **my-eap7-app-2**. Did this badge appear?
+          - a **Complete** badge will surface on the page header beside build name **eap74-with-postgres-2**. Did this badge appear?
 
       summary:
         failed: Try the steps again.
@@ -178,9 +178,9 @@ spec:
 
         1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
         
-        1. Hover over the pod donut of the **my-eap7-app** Deployment to see the pod status in a tooltip.
+        1. Hover over the pod donut of the **eap74-with-postgres** Deployment to see the pod status in a tooltip.
 
-              - Notice that the **my-eap7-app** deployment has a pod donut imposed on the circle, representing the pod status.  
+              - Notice that the **eap74-with-postgres** deployment has a pod donut imposed on the circle, representing the pod status.
 
               - The color of the donut indicates the pod status (light blue = **Pending**, blue = **Not Ready**, dark blue = **Running**)
 
@@ -198,7 +198,7 @@ spec:
       title: View the Pod status
     - description: >-
 
-        The external link icon on the top right quadrant of the **my-eap7-app** deployment represents the route URL.  
+        The external link icon on the top right quadrant of the **eap74-with-postgres** deployment represents the route URL.
         
         1. Click on the external link icon to open the URL and run the application in a new browser tab.
 
