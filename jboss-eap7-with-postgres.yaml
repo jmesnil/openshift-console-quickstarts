@@ -215,7 +215,7 @@ spec:
         failed: Try the steps again.
         success: Your JBoss EAP 7 application is running.
       title: Run the JBoss EAP 7 application
-  conclusion: >-
+  conclusion: |-
     Your JBoss EAP 7 application is deployed and ready.
     It uses the PostgreSQL database to store its database.
 
