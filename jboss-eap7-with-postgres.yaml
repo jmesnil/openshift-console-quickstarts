@@ -1,0 +1,219 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleQuickStart
+metadata:
+  name: jboss-eap7-with-postgres
+  annotations:
+    include.release.openshift.io/ibm-cloud-managed: 'true'
+    include.release.openshift.io/self-managed-high-availability: 'true'
+    include.release.openshift.io/single-node-developer: 'true'
+    capability.openshift.io/name: Console
+spec:
+  description: 'Deploy a JBoss EAP 7 application to connect to a PostgreSQL database'
+  displayName: Connect JBoss EAP 7 to a PostgreSQL database
+  durationMinutes: 15
+  icon: >-
+    data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2Q3MWUwMDt9LmNscy0ye2ZpbGw6I2MyMWEwMDt9LmNscy0ze2ZpbGw6I2NkY2RjZDt9LmNscy00e2ZpbGw6I2I3YjdiNzt9LmNscy01e2ZpbGw6I2VhZWFlYTt9LmNscy02e2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkxvZ288L3RpdGxlPjxnIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxjaXJjbGUgY2xhc3M9ImNscy0xIiBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC43MSA1MCkgcm90YXRlKC00NSkiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik04NS4zNiwxNC42NEE1MCw1MCwwLDAsMSwxNC42NCw4NS4zNloiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik02MC4xNyw0My4xM2EzLjQxLDMuNDEsMCwwLDEsLjA3LjY4QTMuNCwzLjQsMCwwLDAsNjAuMTcsNDMuMTNaIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNTkuMjEsNDEuMzhBMy40OCwzLjQ4LDAsMCwxLDYwLDQyLjQ3LDMuNDgsMy40OCwwLDAsMCw1OS4yMSw0MS4zOFoiLz48cG9seWdvbiBjbGFzcz0iY2xzLTMiIHBvaW50cz0iNTkuMTMgNDEuMjkgNTkuMTMgNDEuMjkgNTkuMDQgNDEuMjEgNTkuMTMgNDEuMjkiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01OS4xMiw0Ni4zNCwzMy41NCw2OS43M2wyNS41OC0yMy40YTMuNDUsMy40NSwwLDAsMCwuOTEtMS40QTMuNDUsMy40NSwwLDAsMSw1OS4xMiw0Ni4zNFoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0yOC41NCw3MS40OCw1OC44Nyw0MSw1OC43OSw0MWEzLjcsMy43LDAsMCwwLTUuMjEuMkwyOSw2OC4yNmMtMSwxLTEuMTksMi41Mi0uMzUsMy4zMWExLjc1LDEuNzUsMCwwLDAsLjc0LjQxLDEuNzUsMS43NSwwLDAsMS0uNzQtLjQxWiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTI4LjYyLDcxLjU3QTIuNTIsMi41MiwwLDAsMCwzMiw3MS4xMUw1OS4xMiw0Ni4zNGEzLjQyLDMuNDIsMCwwLDAsMC01TDU4Ljg3LDQxLDI4LjU0LDcxLjQ4WiIvPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTM0LjQ2LDM0LjcxbC0xMC42LTguNDNhMi42LDIuNiwwLDAsMC00LjIsMi4zM2wuMTksMS42NGExOC4yMSwxOC4yMSwwLDAsMCwxMS42OSwxNWwxMy42OSw1LjE0LDIuMzEtMi41NUwzNi4xNiwzNi43M0ExNi40NSwxNi40NSwwLDAsMSwzNC40NiwzNC43MVoiLz48cGF0aCBjbGFzcz0iY2xzLTUiIGQ9Ik03NC42OSw3NS40MSw2NS44OCw2NS4xMmExNi40NSwxNi40NSwwLDAsMS0yLjA4LTEuNjNMNTIuMzMsNTIuNTVsLTIuNTIsMi4zLDUuNjcsMTMuNThBMTguMjEsMTguMjEsMCwwLDAsNzAuODcsNzkuNTZsMS42NC4xM0EyLjYsMi42LDAsMCwwLDc0LjY5LDc1LjQxWiIvPjxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTU4LjY0LDQ2Ljc4YTMsMywwLDAsMCwzLjg1LTIuMTcsMy4yOCwzLjI4LDAsMCwwLTMtNC4xNWgwbC0uNTkuNTloMGwuMjYuMjVhMy40MiwzLjQyLDAsMCwxLDAsNVoiLz48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik0zMi43NywxNy4xOGwtLjUsMS41M2ExNy42LDE3LjYsMCwwLDAsMy44OSwxOEw0Ny41Myw0Ny44MmwzLjYxLTQtMTMuNy0yN0EyLjU0LDIuNTQsMCwwLDAsMzIuNzcsMTcuMThaIi8+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNODMuNjUsNjEuNDgsNTYuMzUsNDguODdsLTQsMy42OEw2My44LDYzLjQ5YTE3LjYsMTcuNiwwLDAsMCwxOC4xNSwzLjIzbDEuNTEtLjU1QTIuNTQsMi41NCwwLDAsMCw4My42NSw2MS40OFoiLz48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik01My41OCw0MS4xN2EzLjcsMy43LDAsMCwxLDUuMjEtLjJsLjA4LjA4aDBsLjU5LS41OWgwYTMuNDEsMy40MSwwLDAsMC00LjI5LTIuOTNjLTIsLjM4LTMuMDcsMi42OC0yLDQuMTFaIi8+PC9nPjwvc3ZnPg==
+  introduction: |-
+    **[JBoss EAP 7](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) delivers enterprise-grade security, performance, and scalability in any environment.** 
+    Whether on-premise; virtual; or in private, public, or hybrid clouds, JBoss EAP can help you deliver apps faster, everywhere.
+
+    In this quickstart, you will build and deploy a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-with-postgres) with JBoss EAP
+    using its [datasources feature pack](https://github.com/jbossas/eap-datasources-galleon-pack)
+    to deploy the required drivers and configuration to connect to a PostgreSQL database.
+
+    The datasources feature pack for JBoss EAP and JBoss EAP XP makes it really easy to configure EAP with JDBC drivers and datasources for various databases such as Oracle, MS SQLServer and PostgreSQL.
+  prerequisites:
+    - You completed the "Get started with JBoss EAP 7 using a Helm Chart" quick start.
+  tasks:
+    - title: Create the PostgreSQL database
+      description: >-
+        In this taks, you will create an ephemeral PostGreSQL application on OpenShift to store the application data.
+
+        1. Click on the [perspective switcher]{{highlight qs-perspective-switcher}} at the top of the navigation, and select **Developer**.
+
+        1. In the navigation menu, click [Add]{{highlight qs-nav-add}}.
+
+        1. On the **+Add** page, click **Container Images**. 
+
+        1. Select **Image stream tag from internal registry**
+            1. Set the **Project** to `openshift`
+            1. Set the **Image Stream** to `postgresql`
+            1. Set the **Tag** to `latest`
+
+        1. Set the **Runtime icon** to `postgresql`
+
+        1. Click on the **Resource type** link near the bottom of the page
+            1. Select `Deployment`
+
+        1. Click on **Deployment** link near the bottom of the page
+            1.Add three **Environment variables**:
+              * Name: `POSTGRESQL_USER`, Value: `my-db-user`
+              * Name: `POSTGRESQL_PASSWORD`, Value: `my-db-password`
+              * Name: `POSTGRESQL_DATABASE`, Value: `sampledb`
+
+         1. Click on **Create**
+      review:
+        failedTaskHelp: This task isn’t verified yet. Try the task again.
+        instructions: |-
+          The PostgreSQL database is up and running
+          
+          - Do you see a **postgresql** Deployment in the [Topology]{{highlight qs-nav-topology}} view?
+          
+          - Do you see a **Dark Blue** circle around the **postgresql** deployment (that indicates that the Pod is running)?
+      summary:
+        failed: Try the steps again.
+        success: Your PostgreSQL database is up and running on OpenShift.
+
+    - description: >-
+        To create the JBoss EAP 7 application:
+        
+        1. Click on the [perspective switcher]{{highlight qs-perspective-switcher}} at the top of the navigation, and select **Developer**.
+        
+        1. In the navigation menu, click [Add]{{highlight qs-nav-add}}.
+
+        1. On the **+Add** page, click **Helm Chart**. 
+        
+        1. In the Helm Chart catalog, click the **JBoss EAP 7.4** tile.
+        
+            - The side panel displays information about the JBoss EAP 7 Helm chart
+        
+        1. Click **Install Helm Chart**
+        
+            We will use the YAML editor to configure our application to connect to the database.
+
+            1. Change the release name to **my-eap7-app** (instead of the default **eap74**).
+
+            1. Select **YAML view**.
+          
+            1. Remove all YAML content in the text editor.
+
+            2. Paste the following content:
+
+            ```
+            build:
+              uri: https://github.com/jboss-eap-up-and-running/eap7-with-postgres
+              s2i:
+                featurePacks:
+                  - org.jboss.eap:eap-datasources-galleon-pack:7.4.0.GA-redhat-00003
+                galleonLayers: 
+                  - cloud-server
+                  - postgresql-datasource
+              env:
+                - name: POSTGRESQL_DRIVER_VERSION
+                  value: '42.2.19'
+            deploy:
+              env:
+                # Env vars to connect to PostgreSQL DB
+                - name: POSTGRESQL_DATABASE
+                  value: sampledb
+                - name: POSTGRESQL_USER
+                  value: my-db-user
+                - name: POSTGRESQL_PASSWORD
+                  value: my-db-password
+                - name: POSTGRESQL_SERVICE_HOST
+                  value: postgresql
+                - name: POSTGRESQL_DATASOURCE
+                  value: qs-ds
+            ```
+
+        1. At the bottom of the form, click **Install** to create the JBoss EAP 7 application using the Helm Chart.
+      review:
+        failedTaskHelp: This task isn’t verified yet. Try the task again.
+        instructions: |-
+          The Helm Release is represented by the light grey shape with a darker grey dashed border.  The deployment is a white circle containing the JBoss EAP logo.  Verify the application was successfully created:
+          
+          - Do you see a **my-eap7-app** Helm Release?
+          
+          - Do you see a **my-eap7-app** deployment?
+
+      summary:
+        failed: Try the steps again.
+        success: Your JBoss EAP7 application has been deployed onto OpenShift.
+      title: Create a JBoss EAP7 application with Helm
+    - description: >-
+        An EAP 7 application is built in 2 steps:
+
+        1. The first Build will package the Jakarta EE application and creates an EAP server to run it
+
+        2. The second Build will move the package and the server in a *runtime image* that contains only what is required to run EAP applications.
+
+            - a build will go in various stages that are shown in a badge next to the build name (**Pending, Running, Complete**)
+
+        To view the build status of the JBoss EAP 7 application:
+        
+        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
+
+        1. Click on the **my-eap7-app-build-artifacts** Build Config 
+
+        1. The build is shown in the **Builds** tab and is named **my-eap7-app-build-artifacts-1**.
+
+            - this build may take a few minutes to complete.
+
+        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
+
+        1. Click on the **my-eap7-app** Build Config 
+
+        1. The build is shown in the **Builds** tab and is named **my-eap7-app-2**.
+
+            - this build will appear once the first intermediate build **my-eap7-app-build-artifacts-1** is complete.
+      review:
+        failedTaskHelp: This task isn’t verified yet. Try the task again.
+        instructions: >-
+          The two builds **my-eap7-app4-build-artifacts-1** and **my-eap7-app-2** may take a few minutes to complete.
+          
+          Verify the builds are complete:
+
+          - a **Complete** badge will surface on the page header beside build name **my-eap7-app-build-artifacts-1**. Did this badge appear?
+
+          - a **Complete** badge will surface on the page header beside build name **my-eap7-app-2**. Did this badge appear?
+
+      summary:
+        failed: Try the steps again.
+        success: Your build is complete.
+      title: View the Build status
+    - description: >-
+        To view the pod status:
+
+        1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
+        
+        1. Hover over the pod donut of the **my-eap7-app** Deployment to see the pod status in a tooltip.
+
+              - Notice that the **my-eap7-app** deployment has a pod donut imposed on the circle, representing the pod status.  
+
+              - The color of the donut indicates the pod status (light blue = **Pending**, blue = **Not Ready**, dark blue = **Running**)
+
+      review:
+        failedTaskHelp: >-
+          This task isn’t verified yet. Try the task again.
+        instructions: |-
+          Verify you see the pod status:
+          
+          - Do you see the number of associated pods and their statuses?
+
+      summary:
+        failed: Try the steps again.
+        success: Your deployment has one running pod.
+      title: View the Pod status
+    - description: >-
+
+        The external link icon on the top right quadrant of the **my-eap7-app** deployment represents the route URL.  
+        
+        1. Click on the external link icon to open the URL and run the application in a new browser tab.
+
+            * The application displays all items that are stored in the PostgreSQL application. When it starts there is none and it
+              will display an empty array `[]`.
+
+      review:
+        failedTaskHelp: This task isn’t verified yet. Try the task again.
+        instructions: >-
+          Verify your JBoss EAP 7 application is running:
+
+          - Does the new tab displays `[]`?
+      summary:
+        failed: Try the steps again.
+        success: Your JBoss EAP 7 application is running.
+      title: Run the JBoss EAP 7 application
+  conclusion: >-
+    Your JBoss EAP 7 application is deployed and ready.
+
+     Learn more about [JBoss EAP](https://www.redhat.com/en/technologies/jboss-middleware/application-platform).
