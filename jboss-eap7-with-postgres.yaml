@@ -202,20 +202,28 @@ spec:
         
         1. Click on the external link icon to open the URL and run the application in a new browser tab.
 
-            * The application displays all items that are stored in the PostgreSQL application. When it starts there is none and it
-              will display an empty array `[]`.
+            * The application displays a page that explains the HTTP endpoints provided by the Jakarta EE application as well
+              as a form to interactively add items to the database.
 
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
           Verify your JBoss EAP 7 application is running:
 
-          - Does the new tab displays `[]`?
+          - Where you able to add items to the database and verify they were returned by the application?
       summary:
         failed: Try the steps again.
         success: Your JBoss EAP 7 application is running.
       title: Run the JBoss EAP 7 application
   conclusion: >-
     Your JBoss EAP 7 application is deployed and ready.
+    It uses the PostgreSQL database to store its database.
+    
+    The connection to the DB was configured by including the the EAP datasource feature pack and its `postgresql-datasource`
+    layer when the application image is built.
 
-     Learn more about [JBoss EAP](https://www.redhat.com/en/technologies/jboss-middleware/application-platform).
+    A set of environment variables at deployment time was used to provide the information to connect to the databasee 
+    (through its **service** with the expected user credentials).
+
+    You can learn more about [JBoss EAP](https://www.redhat.com/en/technologies/jboss-middleware/application-platform)
+    and its [datasources feature pack](https://github.com/jbossas/eap-datasources-galleon-pack).
