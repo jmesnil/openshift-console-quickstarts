@@ -86,6 +86,25 @@ spec:
         success: Your Helm release for JBoss EAP 7 is deployed.
       title: View the Helm release
     - description: >-
+        To view the associated code:
+
+        1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
+
+        1. The icon on the bottom right quadrant of the **eap74** deployment either represents the Git repository of the associated code, OR if the appropriate operators are installed, it will bring up the associated code in your IDE.
+
+        1. If the icon shown is Bitbucket, GitHub, GitLab or generic Git, click it to navigate to the associate Git repository. Otherwise, if the icon shown is CodeReady Workspaces or Eclipse Che, click it to bring up the associated code in your IDE.
+      review:
+        failedTaskHelp: >-
+          This task isn’t verified yet. Try the task again.
+        instructions: >-
+          Verify that you can see the code associated with your application:
+
+          - Was a new browser tab opened either to your associated Git repository or to your IDE?
+      summary:
+        failed: Try the steps again.
+        success: You viewed the code associated with the **eap74** deployment.
+      title: View the associated code
+    - description: >-
         An EAP 7 application is built in 2 steps:
 
         1. The first Build will package the Jakarta EE application and creates an EAP server to run it
