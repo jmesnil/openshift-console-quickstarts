@@ -188,3 +188,5 @@ spec:
     Your JBoss EAP 7 application is deployed and ready.
 
      Learn more about [JBoss EAP](https://www.redhat.com/en/technologies/jboss-middleware/application-platform).
+  nextQuickStart:
+    - jboss-eap7-with-postgres
