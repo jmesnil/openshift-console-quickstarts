@@ -46,7 +46,7 @@ spec:
         
             - Some form sections are collapsed by default. No changes to these sections are needed to proceed. Click the accordion above a collapsed section to expand and view its content.
 
-            - The Jakarta EE application that you will build and deploy is specified with the `build.uri` field:
+            - The [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) that you will build and deploy is specified with the `build.uri` field:
 
               ```
                build:
@@ -56,6 +56,7 @@ spec:
               If you were building another application, you would change this field to point to your application's Git repository instead.
         
         1. At the bottom of the form, click **Install** to create the JBoss EAP 7 application using the Helm Chart.
+
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: |-
@@ -105,42 +106,41 @@ spec:
         success: You viewed the code associated with the **eap74** deployment.
       title: View the associated code
     - description: >-
-        An EAP 7 application is built in 2 steps:
-
-        1. The first Build will package the Jakarta EE application and creates an EAP server to run it
-
-        2. The second Build will move the package and the server in a *runtime image* that contains only what is required to run EAP applications.
-
-            - a build will go in various stages that are shown in a badge next to the build name (**Pending, Running, Complete**)
-
         To view the build status of the JBoss EAP 7 application:
-        
-        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
-        1. Click on the **eap74-build-artifacts** Build Config 
+        1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
 
-        1. The build is shown in the **Builds** tab and is named **eap74-build-artifacts-1**.
+        1. Click on the **eap74 Deployment** in the Topology view (that is identified with the big JBoss EAP icon)
 
-            - this build may take a few minutes to complete.
+            - This opens a panel on the right-hand side of the screen for the **eap74 Deployment**.
 
-        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
+        1. Click on the **Resources** tab of the right-hand side panel.
 
-        1. Click on the **eap74** Build Config 
+            - the Builds are shown in the **Builds** section. A JBoss EAP 7 application is built in two steps:
 
-        1. The build is shown in the **Builds** tab and is named **eap74-2**.
+                - The initial Build Config compiles and packages the Jakarta EE application, and creates a JBoss EAP server to run it
 
-            - this build will appear once the first intermediate build **eap74-build-artifacts-1** is complete.
+                - The second Build Config bundles the package and the server in a *runtime image* that contains only what is required to run JBoss EAP applications.
+
+        1. The initial build config is named **eap74-build-artifacts** and a message is displayed below it: **Build #1 is running** with a spinning icon on its left.
+
+            - This build may take a few minutes to complete. Once it is complete, the message will be displayed: **Build #1 was complete** with a
+              green check mark on its left
+
+        1. The second build config is named  **eap74**.
+
+            - This build will start once the initial **eap74-build-artifacts** build is complete.
+
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
-          The two builds **eap74-build-artifacts-1** and **eap74-2** may take a few minutes to complete.
+          The two builds for **eap74-build-artifacts** and **eap74** may take a few minutes to complete. A build will go in various stages that are displayed in messages below the build configs (**Pending, Running, Complete**).
 
           Verify the builds are complete:
 
-          - a **Complete** badge will surface on the page header beside build name **eap74-build-artifacts-1**. Did this badge appear?
+          - a message **Build #1 was complete** is displayed below the **eap74-build-artifacts** Build Config. Did this message appear?
 
-          - a **Complete** badge will surface on the page header beside build name **eap74-2**. Did this badge appear?
-
+          - a message **Build #2 was complete** is displayed below the **eap74** Build Config. Did this message appear?
       summary:
         failed: Try the steps again.
         success: Your build is complete.
@@ -150,11 +150,11 @@ spec:
 
         1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
         
-        1. Hover over the pod donut to see the pod status in a tooltip.
+        1. Hover over the pod donut around the **eap74** deployment to see the pod status in a tooltip.
 
               - Notice that the **eap74** deployment has a pod donut imposed on the circle, representing the pod status.  
 
-              - The color of the donut indicates the pod status (light blue = **Pending**, blue = **Not Ready**, dark blue = **Running**)
+              - The color of the donut indicates the number of pods and their status (light blue = **Pending**, blue = **Not Ready**, dark blue = **Running**)
 
       review:
         failedTaskHelp: >-
@@ -162,7 +162,9 @@ spec:
         instructions: |-
           Verify you see the pod status:
           
-          - Do you see the number of associated pods and their statuses?
+          - Do you see the number of associated pods and their statuses in the pod donut?
+
+          - Does it display **1 Running**?
 
       summary:
         failed: Try the steps again.
