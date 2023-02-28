@@ -133,42 +133,41 @@ spec:
         success: Your JBoss EAP7 application has been deployed onto OpenShift.
       title: Create a JBoss EAP7 application with Helm
     - description: >-
-        An EAP 7 application is built in 2 steps:
-
-        1. The first Build will package the Jakarta EE application and creates an EAP server to run it
-
-        2. The second Build will move the package and the server in a *runtime image* that contains only what is required to run EAP applications.
-
-            - a build will go in various stages that are shown in a badge next to the build name (**Pending, Running, Complete**)
-
         To view the build status of the JBoss EAP 7 application:
-        
-        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
 
-        1. Click on the **eap74-with-postgres-build-artifacts** Build Config.
+        1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
 
-        1. The build is shown in the **Builds** tab and is named **eap74-with-postgres-build-artifacts-1**.
+        1. Click on the **eap74 Deployment** in the Topology view (that is identified with the big JBoss EAP icon)
 
-            - this build may take a few minutes to complete.
+            - This opens a panel on the right-hand side of the screen for the **eap74 Deployment**.
 
-        1. In the navigation menu, click [Builds]{{highlight qs-nav-builds}}.
+        1. Click on the **Resources** tab of the right-hand side panel.
 
-        1. Click on the **eap74-with-postgres** Build Config.
+            - the Builds are shown in the **Builds** section. A JBoss EAP 7 application is built in two steps:
 
-        1. The build is shown in the **Builds** tab and is named **eap74-with-postgres-2**.
+                - The initial Build Config compiles and packages the Jakarta EE application, and creates a JBoss EAP server to run it
 
-            - this build will appear once the first intermediate build **eap74-with-postgres-build-artifacts-1** is complete.
+                - The second Build Config bundles the package and the server in a *runtime image* that contains only what is required to run JBoss EAP applications.
+
+        1. The initial build config is named **eap74-with-postgres-build-artifacts** and a message is displayed below it: **Build #1 is running** with a spinning icon on its left.
+
+            - This build may take a few minutes to complete. Once it is complete, the message will be displayed: **Build #1 was complete** with a
+              green check mark on its left
+
+        1. The second build config is named  **eap74-with-postgres**.
+
+            - This build will start once the initial **eap74-with-postgres-build-artifacts** build is complete.
+
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
-          The two builds **eap74-with-postgres4-build-artifacts-1** and **eap74-with-postgres-2** may take a few minutes to complete.
-          
+          The two builds for **eap74-build-artifacts** and **eap74** may take a few minutes to complete. A build will go in various stages that are displayed in messages below the build configs (**Pending, Running, Complete**).
+
           Verify the builds are complete:
 
-          - a **Complete** badge will surface on the page header beside build name **eap74-with-postgres-build-artifacts-1**. Did this badge appear?
+          - a message **Build #1 was complete** is displayed below the **eap74-with-postgres-build-artifacts** Build Config. Did this message appear?
 
-          - a **Complete** badge will surface on the page header beside build name **eap74-with-postgres-2**. Did this badge appear?
-
+          - a message **Build #2 was complete** is displayed below the **eap74-with-postgres** Build Config. Did this message appear?
       summary:
         failed: Try the steps again.
         success: Your build is complete.
