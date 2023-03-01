@@ -110,7 +110,7 @@ spec:
 
         1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.
 
-        1. Click on the **eap74 Deployment** in the Topology view (that is identified with the big JBoss EAP icon)
+        1. Click on the **eap74 Deployment** in the Topology view (that is identified with the large JBoss EAP icon)
 
             - This opens a panel on the right-hand side of the screen for the **eap74 Deployment**.
 
