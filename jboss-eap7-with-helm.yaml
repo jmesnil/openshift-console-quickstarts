@@ -57,6 +57,7 @@ spec:
         
         1. At the bottom of the form, click **Install** to create the JBoss EAP 7 application using the Helm Chart.
 
+            - The console will switch to the [Topology]{{highlight qs-nav-topology}} view and display a note about the Helm release that has been installed.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: |-
