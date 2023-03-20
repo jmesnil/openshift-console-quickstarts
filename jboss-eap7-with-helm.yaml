@@ -101,18 +101,17 @@ spec:
         To view the associated code:
 
         1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.  
-           In the Topology view, the **eap74** deployment displays a GitHub icon in the bottom right-hand corner.
+           In the Topology view, the **eap74** deployment displays a code icon in the bottom right-hand corner. This icon either represents the Git repository
+           of the associated code, OR if the appropriate operators are installed, it will bring up the associated code in your IDE.
 
-        1. Click the GitHub icon to navigate to the GitHub repository.
-
-        1. Browse the repository to see the code associated with the **eap74** deployment.
+        1. If the icon shown is CodeReady Workspaces or Eclipse Che, click it to bring up the associated code in your IDE. Otherwise, click it to navigate to the associated Git repository.
       review:
         failedTaskHelp: >-
           This task isn’t verified yet. Try the task again.
         instructions: >-
           Verify that you can see the code associated with your application:
 
-          - Did the GitHub repository open in a separate browser window?
+          - Did the Git repository or your IDE open in a separate browser window?
       summary:
         failed: Try the steps again.
         success: You viewed the code associated with the **eap74** deployment.
