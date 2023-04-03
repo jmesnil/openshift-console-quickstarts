@@ -26,10 +26,10 @@ spec:
 
     * **More productive developers with DevOps and Agile Development**
 
-    In this quickstart, you will deploy and run a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) with JBoss EAP 7 on OpenShift.
+    In this quick start, you will deploy and run a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) with JBoss EAP 7 on OpenShift.
 
     **Note:** The quickstart uses a sample [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started). You can deploy your own Jakarta EE application using the same steps.
-    The quickstart has instructions where changes would be needed (Task 1).
+    The quick start has instructions where changes would be needed (Task 1).
 
   tasks:
     - description: >-
@@ -44,14 +44,16 @@ spec:
         
         1. In the **Helm Charts** catalog, search for **JBoss EAP 7.4**
         
+        1. Click the **JBoss EAP 7.4**  Helm chart card.
+
             - The side panel displays information about the JBoss EAP 7 Helm chart
-        
-        1. Click **Install Helm Chart**
+
+        1. Click **Install Helm Chart**.
         
             - Some form sections are collapsed by default. Click **>** to expand and view its content.  
               **Note:** No updates are required to these sections to proceed.
 
-            - The details about the [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) that you are building and deploying is specified in the `build.uri` field:
+            - The details about the [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) that you are building and deploying are specified in the `build.uri` field:
 
               ```
               build:
@@ -107,7 +109,9 @@ spec:
            In the Topology view, the **eap74** deployment displays a code icon in the bottom right-hand corner. This icon either represents the Git repository
            of the associated code, OR if the appropriate operators are installed, it will bring up the associated code in your IDE.
 
-        1. If the icon shown is CodeReady Workspaces or Eclipse Che, click it to bring up the associated code in your IDE. Otherwise, click it to navigate to the associated Git repository.
+        1. If the icon shown is CodeReady Workspaces or Eclipse Che, clicking the icon opens the associated code in your IDE
+
+        1. If the inco represents a Git repository, clicking the icon opens the associated Git repository.
       review:
         failedTaskHelp: >-
           This task isn’t verified yet. Try the task again.
@@ -138,13 +142,13 @@ spec:
             The build may take a few minutes to complete. The build progresses through various states such as **Pending**, **Running**, and **Complete**.
             The build state is indicated by a relevant message.
 
-            When the build is complete, a checkmark and the following message is displayed: **Build #1 was complete**
+            When the build is complete, a checkmark and the following message is displayed: **Build #1 was complete**.
 
             When the first build is complete, the second build starts.
 
           - The second build configuration **eap74** puts the Jakarta EE deployment and the JBoss EAP server in a runtime image that contains only what is required to run the  application.
 
-            When the second build is complete, a checkmark and the following message are displayed: **Build #2 was complete**
+            When the second build is complete, a checkmark and the following message are displayed: **Build #2 was complete**.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: >-
@@ -167,13 +171,13 @@ spec:
         1. In the **Topology** view, click **D eap74**.  
            A side panel opens with detailed information about the application.
 
-        1. In the Details tab, hover over the pod to see the pod status in a tooltip.
+        1. In the **Details** tab, hover over the pod to see the pod status in a tooltip.
 
             - Inside the pod circle, it displays the number of pod.
             - The color of the pod circle indicates the pod status:
               Light blue = **Pending**, Blue = **Not Ready**, Dark blue = **Running**
 
-        **Note:** In the **Topology** view, the dark outer circle **D eap74** deployment indicates the pod status.
+        **Note:** In the **Topology** view, the dark outer circle indicates the pod status.
       review:
         failedTaskHelp: >-
           This task isn’t verified yet. Try the task again.

@@ -1,2 +1,2 @@
 # openshift-quickstarts
-Collection of OpenShift Quickstarts to build and deploy EAP applications
+Collection of OpenShift quick starts to build and deploy EAP applications

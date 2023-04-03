@@ -17,7 +17,7 @@ spec:
     **[JBoss EAP 7](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) delivers enterprise-grade security, performance, and scalability in any environment.** 
     Whether on-premise; virtual; or in private, public, or hybrid clouds, JBoss EAP can help you deliver apps faster, everywhere.
 
-    In this quickstart, you will build and deploy a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-with-postgres) with JBoss EAP
+    In this quick start, you will build and deploy a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-with-postgres) with JBoss EAP
     using its [datasources feature pack](https://github.com/jbossas/eap-datasources-galleon-pack)
     to deploy the required drivers and configuration to connect to a PostgreSQL database.
 
