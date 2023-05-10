@@ -111,7 +111,7 @@ spec:
 
         1. If the icon shown is CodeReady Workspaces or Eclipse Che, clicking the icon opens the associated code in your IDE
 
-        1. If the inco represents a Git repository, clicking the icon opens the associated Git repository.
+        1. If the icon represents a Git repository, clicking the icon opens the associated Git repository.
       review:
         failedTaskHelp: >-
           This task isn’t verified yet. Try the task again.
