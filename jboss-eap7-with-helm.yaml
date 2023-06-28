@@ -26,7 +26,7 @@ spec:
 
     * **More productive developers with DevOps and Agile Development**
 
-    In this quick start, you will deploy and run a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) with JBoss EAP 7 on OpenShift.
+    With this quick start, you can deploy and run a [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started) with JBoss EAP 7 on OpenShift.
 
     **Note:** The quickstart uses a sample [Jakarta EE application](https://github.com/jboss-eap-up-and-running/eap7-getting-started). You can deploy your own Jakarta EE application using the same steps.
     The quick start has instructions where changes would be needed (Task 1).
@@ -42,13 +42,13 @@ spec:
 
         1. In the **Add** page, click **Helm Chart**.
         
-        1. In the **Helm Charts** catalog, search for **JBoss EAP 7.4**
+        1. In the **Helm Charts** catalog, search for **JBoss EAP 7.4**.
         
         1. Click the **JBoss EAP 7.4**  Helm chart card.
 
-            - The side panel displays information about the JBoss EAP 7 Helm chart
+            - The side panel displays information about the JBoss EAP 7 Helm chart.
 
-        1. Click **Install Helm Chart**.
+        1. Click **Create**.
         
             - Some form sections are collapsed by default. Click **>** to expand and view its content.  
               **Note:** No updates are required to these sections to proceed.
@@ -62,10 +62,10 @@ spec:
 
               **Note:** If you are building a different application, you must change this `uri` field to point to the Git repository of that application.
 
-        1.  Click **Install** to create the JBoss EAP 7 application using the Helm Chart.
+        1.  Click **Create** to create the JBoss EAP 7 application using the Helm Chart.
 
-            - The console switches to the [Topology]{{highlight qs-nav-topology}} view and displays a note that has details about the Helm release.
-              After you read the note, you can close it.
+            - The console switches to the [Topology]{{highlight qs-nav-topology}} view and displays a pane with the Helm Release notes.
+              After you read the notes, you can close the pane.
       review:
         failedTaskHelp: This task isn’t verified yet. Try the task again.
         instructions: |-
@@ -107,9 +107,9 @@ spec:
 
         1. In the navigation menu, click [Topology]{{highlight qs-nav-topology}}.  
            In the Topology view, the **eap74** deployment displays a code icon in the bottom right-hand corner. This icon either represents the Git repository
-           of the associated code, OR if the appropriate operators are installed, it will bring up the associated code in your IDE.
+           of the associated code, or if the appropriate operators are installed, it will bring up the associated code in your IDE.
 
-        1. If the icon shown is CodeReady Workspaces or Eclipse Che, clicking the icon opens the associated code in your IDE
+        1. If the icon shown is CodeReady Workspaces or Eclipse Che, clicking the icon opens the associated code in your IDE.
 
         1. If the icon represents a Git repository, clicking the icon opens the associated Git repository.
       review:
@@ -139,8 +139,7 @@ spec:
           - The first build configuration **eap74-build-artifacts** compiles and packages the Jakarta EE application, and creates a JBoss EAP server.
             The application is run on this JBoss EAP server.
 
-            The build may take a few minutes to complete. The build progresses through various states such as **Pending**, **Running**, and **Complete**.
-            The build state is indicated by a relevant message.
+            The build may take a few minutes to complete. The build state is indicated by a relevant message such as **Pending**, **Running**, and **Complete**.
 
             When the build is complete, a checkmark and the following message is displayed: **Build #1 was complete**.
 
@@ -171,7 +170,7 @@ spec:
         1. In the **Topology** view, click **D eap74**.  
            A side panel opens with detailed information about the application.
 
-        1. In the **Details** tab, hover over the pod to see the pod status in a tooltip.
+        1. In the **Details** tab, the pod status is available in a tooltip by hovering over the pod.
 
             - Inside the pod circle, it displays the number of pod.
             - The color of the pod circle indicates the pod status:
@@ -214,5 +213,3 @@ spec:
 
       - Learn more about  [JBoss EAP](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/).
       - Read detailed [JBoss EAP 7 documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4).
-#  nextQuickStart:
-#    - jboss-eap7-with-postgres
